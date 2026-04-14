@@ -33,5 +33,15 @@ int main(int argc, char* argv[]) {
                    [&view, &player]() { view.centerOn(&player); });
   timer.start(33);
 
+  QGraphicsRectItem platform2(0, 0, 200, 20);
+  platform2.setBrush(Qt::darkGreen);
+  platform2.setPos(500, 200);
+  scene.addItem(&platform2);
+
+  QGraphicsRectItem platform3(0, 0, 200, 20);
+  platform3.setBrush(Qt::darkGreen);
+  platform3.setPos(900, 150);
+  scene.addItem(&platform3);
+
   return app.exec();
 }
