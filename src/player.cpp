@@ -1,5 +1,6 @@
 #include "player.hpp"
 
+#include <QMessageBox>
 #include <QBrush>
 
 Player::Player(QGraphicsItem* parent)
@@ -40,5 +41,8 @@ void Player::updateState() {
     }
   }
 
-  
+  if (y() > scene()->height()) {
+    QMessageBox::information(nullptr, "Game Over", "You lost!");
+    scene()->removeItem(this);
+  }
 }
